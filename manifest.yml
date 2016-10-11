@@ -1,0 +1,6 @@
+---
+applications:
+- name: cloudnode
+  memory: 128M
+  host: cloudnodeclass4lak
+  command: node app.js
