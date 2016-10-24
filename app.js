@@ -5,9 +5,11 @@ var app = express();
 var bodyParser = require('body-parser');
 var logger = require('express-logger');
 
-
-app.use(bodyParser);
-app.use(logger);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+})); 
+app.use(logger({path: "logfile.log"}));
 
 app.get('/', routes.get_main);
 app.post('/results', routes.post_results);
